@@ -1,5 +1,5 @@
 from typing import Union
-
+from widget import mask_account_card
 
 def get_mask_card_number(card_number: Union[int, str]) -> Union[str]:
     """Функция маскировки номера банковской карты"""
@@ -16,6 +16,9 @@ def get_mask_account(account_number: Union[int, str]) -> Union[str]:
 
     return f"**{str_account_number[-5:-1]}"
 
+card_name, card_num = mask_account_card()
 
-print(get_mask_account(1234567891))
-print(get_mask_card_number(1234567891))
+if len(card_num)<17:
+    print(f"{card_name} {get_mask_account(card_num)}")
+else:
+    print(f"{card_name} {get_mask_card_number(card_num)}")
