@@ -2,7 +2,7 @@ from masks import get_mask_card_number
 from masks import get_mask_account
 
 
-def mask_account_card(account_card):
+def mask_account_card(account_card: str) -> str:
     """Функция обработки информации о картах и счетах"""
     card_num = ""
     card_name = ""
