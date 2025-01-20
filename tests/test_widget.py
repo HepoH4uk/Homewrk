@@ -9,7 +9,7 @@ from src.widget import mask_account_card, get_data
     ("", "Данные введены некорректно"),
     ("23453245", "Данные введены некорректно")
 ])
-def test_mask_account_card(account_card,mask_account):
+def test_mask_account_card(account_card, mask_account):
     assert mask_account_card(account_card) == mask_account
 
 
@@ -17,7 +17,7 @@ def test_mask_account_card(account_card,mask_account):
     ("2022-06-11T02:26:18.671407", "11.06.2022"),
     ("2015-12-23T02:26:18.671407", "23.12.2015"),
 ])
-def test_get_data(user_date,correct_date):
+def test_get_data(user_date, correct_date):
     assert get_data(user_date) == correct_date
 
 
@@ -29,9 +29,11 @@ def get_data_test():
 def test_get_data_test(get_data_test):
     assert get_data("2022-06-11T02:26:18.671407") == get_data_test
 
+
 @pytest.fixture()
 def card_account():
     return "Maestro  7000 79** **** 6361"
+
 
 def test_mask_card(card_account):
     assert mask_account_card("Maestro 7000792289606361") == card_account

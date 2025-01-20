@@ -28,10 +28,8 @@ def test_data_test(data_test):
             {"id": 1, "state": "EXECUTED"},
             {"id": 2, "state": "EXECUTED"},
             {"id": 3, "state": "CANCELED"}
-            ],["EXECUTED", "EXECUTED"]),
-            ([], [])
+            ], ["EXECUTED", "EXECUTED"]), ([], [])
     ])
-
 def test_filter_by_state(input_data, data_result):
     result = filter_by_state(input_data)
     assert len(result) == len(data_result)
@@ -43,32 +41,32 @@ def test_filter_by_state(input_data, data_result):
     "input_data, descending, expected_result",
     [(
                 [{"date": "2025-07-03T18:35:29.5123"},
-                {"date": "2024-07-03T18:35:29.5123"},
-                {"date": "2023-07-03T18:35:29.5123"}],
+                 {"date": "2024-07-03T18:35:29.5123"},
+                 {"date": "2023-07-03T18:35:29.5123"}],
                 True,
-                ["2025-07-03T18:35:29.5123", "2024-07-03T18:35:29.5123", "2023-07-03T18:35:29.5123"]),
-    ([
+                ["2025-07-03T18:35:29.5123",
+                 "2024-07-03T18:35:29.5123",
+                 "2023-07-03T18:35:29.5123"]),
+        (
+            [
                 {"date": "2025-07-03T18:35:29.5123"},
                 {"date": "2024-07-03T18:35:29.5123"},
                 {"date": "2023-07-03T18:35:29.5123"}],
-                False,
-                ["2023-07-03T18:35:29.5123", "2024-07-03T18:35:29.5123", "2025-07-03T18:35:29.5123"]),
-
-    ([
+            False,
+            ["2023-07-03T18:35:29.5123",
+             "2024-07-03T18:35:29.5123",
+             "2025-07-03T18:35:29.5123"]),
+        (
+            [
                 {"date": "2023-07-03T18:35:29.5123"},
                 {"date": "2023-07-03T18:35:29.5123"},
                 {"date": "2023-07-03T18:35:29.5123"}],
-                True,
-                ["2023-07-03T18:35:29.5123", "2023-07-03T18:35:29.5123", "2023-07-03T18:35:29.5123"])])
+            True,
+            [
+                "2023-07-03T18:35:29.5123",
+                "2023-07-03T18:35:29.5123",
+                "2023-07-03T18:35:29.5123"])])
 def test_sort_by_date(input_data, descending, expected_result):
     result = sort_by_date(input_data, descending)
     actual_dates = [item['date'] for item in result]
     assert actual_dates == expected_result
-
-
-
-
-
-
-
-

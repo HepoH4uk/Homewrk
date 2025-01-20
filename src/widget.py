@@ -27,7 +27,3 @@ def get_data(user_date: str) -> str:
     date = new_date[0].split("-")
 
     return (f"{date[-1]}.{date[-2]}.{date[-3]}")
-
-
-print(mask_account_card("23453245"))
-print(get_data("2015-12-23T02:26:18.671407"))
