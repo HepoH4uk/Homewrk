@@ -13,10 +13,12 @@ def mask_account_card(account_card: str) -> str:
         else:
             card_name += i
 
-    if len(card_num) > 17:
+    if len(card_num) == 20:
         return (f"{card_name} {get_mask_account(card_num)}")
-    else:
+    elif len(card_num) == 16:
         return (f"{card_name} {get_mask_card_number(card_num)}")
+    else:
+        return "Данные введены некорректно"
 
 
 def get_data(user_date: str) -> str:
@@ -25,7 +27,3 @@ def get_data(user_date: str) -> str:
     date = new_date[0].split("-")
 
     return (f"{date[-1]}.{date[-2]}.{date[-3]}")
-
-
-print(mask_account_card("Maestro 7000792289606361"))
-print(get_data("2024-03-11T02:26:18.671407"))
