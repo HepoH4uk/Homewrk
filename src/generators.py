@@ -79,6 +79,8 @@ def transaction_descriptions(transactions: Iterable[Dict[str, Any]]) -> Iterator
     for transaction in transactions:
         descriptions = transaction.get("description", "")
         yield descriptions
+
+
 all_transaction_descriptions = transaction_descriptions(transactions)
 for _ in range(len(transactions)):
     print(next(all_transaction_descriptions))

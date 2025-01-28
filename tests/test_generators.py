@@ -19,7 +19,6 @@ def test_filter_by_currency(states):
         assert "USD" in usd_transactions[0]["operationAmount"]["currency"].values()
         assert "USD" in usd_transactions[1]["operationAmount"]["currency"].values()
 
-
     elif states == "CANCELED":
         assert len(rub_transactions) == 2
         assert "RUB" in rub_transactions[0]["operationAmount"]["currency"].values()
@@ -27,10 +26,10 @@ def test_filter_by_currency(states):
 
 
 @pytest.mark.parametrize(
-    "data, expected", [([{"description": "Перевод организации",},
-                         {"wrong_key": "Перевод со счета на счет",},
-                         {"description": "Перевод с карты на карту",},],
-                         ["Перевод организации", "", "Перевод с карты на карту"]),
+    "data, expected", [([{"description": "Перевод организации", },
+                         {"wrong_key": "Перевод со счета на счет", },
+                         {"description": "Перевод с карты на карту", }, ],
+                        ["Перевод организации", "", "Перевод с карты на карту"]),
                        ([], [])]
 )
 def test_transaction_descriptions(data, expected):
@@ -46,7 +45,7 @@ def test_transaction_descriptions(data, expected):
 ])
 def test_card_number_generator(start, end, expected):
     expected_result = ["0000 0000 0001 1110", "0000 0000 0001 1111", "0000 0000 0001 1112",
-                       "0000 0000 0001 1113","0000 0000 0001 1114", "0000 0000 0001 1115"]
+                       "0000 0000 0001 1113", "0000 0000 0001 1114", "0000 0000 0001 1115"]
 
     general_result = list(card_number_generator(start, end))
 
