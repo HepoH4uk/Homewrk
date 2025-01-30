@@ -36,14 +36,14 @@ def test_transaction_descriptions(data, expected):
     assert list(transaction_descriptions(data)) == expected
 
 
-@pytest.mark.parametrize('start, end, expected', [
+@pytest.mark.parametrize('start, stop, expected', [
     (1, 5, ["0000 0000 0000 0001", "0000 0000 0000 0002", "0000 0000 0000 0003",
             "0000 0000 0000 0004", "0000 0000 0000 0005"]),
     (111110, 111115, ["0000 0000 0001 1110", "0000 0000 0001 1111",
                       "0000 0000 0001 1112", "0000 0000 0001 1113",
                       "0000 0000 0001 1114", "0000 0000 0001 1115"])
 ])
-def test_card_number_generator(start, end, expected):
+def test_card_number_generator(start, stop, expected):
     expected_result = ["0000 0000 0001 1110", "0000 0000 0001 1111", "0000 0000 0001 1112",
                        "0000 0000 0001 1113", "0000 0000 0001 1114", "0000 0000 0001 1115"]
 

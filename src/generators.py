@@ -86,9 +86,9 @@ for _ in range(len(transactions)):
     print(next(all_transaction_descriptions))
 
 
-def card_number_generator(start: int, end: int) -> Iterator[str]:
+def card_number_generator(start: int, stop: int) -> Iterator[str]:
     """Функция генерирования номера карты"""
-    for i in range(start, end + 1):
+    for i in range(start, stop + 1):
         card_number = f"{i:016d}"[:4]+" "+f"{i:016d}"[4:8]+" "+f"{i:016d}"[8:12]+" "+f"{i:016d}"[12:16]
 
         yield card_number
