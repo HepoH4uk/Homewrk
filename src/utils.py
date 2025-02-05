@@ -14,6 +14,3 @@ def list_transactions(filename="../data/operations.json"):
         return data
     except Exception:
         return data
-
-
-print(list_transactions())
