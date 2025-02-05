@@ -27,6 +27,15 @@ print(get_data("2024-03-11T02:26:18.671407"))
 Maestro  7000 79** **** 6361
 11.03.2024
 ```
+## Декорирование функций
+Ввод
+```
+my_function(1, "0")
+```
+Вывод
+```
+my_function error: unsupported operand type(s) for /: 'int' and 'str'. Inputs: (1, '0'), {}
+```
 
 ## Тестирование функций
 
@@ -35,4 +44,6 @@ Maestro  7000 79** **** 6361
 test_masks.py
 test_processing.py
 test_widget.py
+test_generators
+test_decorators
 ```
