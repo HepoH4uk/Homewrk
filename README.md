@@ -37,6 +37,17 @@ my_function(1, "0")
 my_function error: unsupported operand type(s) for /: 'int' and 'str'. Inputs: (1, '0'), {}
 ```
 
+## Обработка JSON файлов благодаря utils.py
+
+Функция принимающая на вход путь SON-файла и возвращает список словарей с данными о финансовых транзакциях
+
+## Конвертация валюты в рубли благодаря external_api.py
+Для конвертации валюты пользуемся Exchange Rates Data API
+Токен доступа для API можно получить тут:
+```
+https://apilayer.com/marketplace/exchangerates_data-api
+```
+
 ## Тестирование функций
 
 Для всех функций добавлены проверочные тесты
@@ -44,6 +55,8 @@ my_function error: unsupported operand type(s) for /: 'int' and 'str'. Inputs: (
 test_masks.py
 test_processing.py
 test_widget.py
-test_generators
-test_decorators
+test_generators.py
+test_decorators.py
+test_external_api.py
+test_utils.py
 ```
