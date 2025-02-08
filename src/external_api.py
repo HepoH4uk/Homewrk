@@ -29,7 +29,7 @@ def amount_transactions(transaction):
            f"&from={currency_code}&amount={transaction_amount}")
     headers = {"apikey": f"{API_KEY}"}
     payload = {"amount": transaction_amount, "from": {currency_code}, "to": "RUB"}
-    response = requests.request("GET", url, headers=headers, params=payload)
+    response = requests.get(url, headers=headers, params=payload)
     status_code = response.status_code
 
     if currency_code == "RUB":
