@@ -14,7 +14,7 @@ transaction = {
     "operationAmount": {
       "amount": "8221.37",
       "currency": {
-        "name": "EUR",
+        "name": "USD",
         "code": "USD"
       }
     }}
