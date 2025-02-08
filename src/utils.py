@@ -12,5 +12,7 @@ def list_transactions(filename="../data/operations.json"):
         else:
             print(data)
         return data
-    except Exception:
+    except FileNotFoundError :
+        return data
+    except json.JSONDecodeError:
         return data
