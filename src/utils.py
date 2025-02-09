@@ -3,7 +3,7 @@ import logging
 
 
 logger = logging.getLogger('utils')
-logger.setLevel(logging.INFO)
+logger.setLevel(logging.DEBUG)
 file_handler = logging.FileHandler('../logs/utils.log','w',encoding='utf-8')
 file_formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s: %(message)s')
 file_handler.setFormatter(file_formatter)
@@ -26,10 +26,10 @@ def list_transactions(filename="../data/operations.json"):
         logger.info("Выводим полученный результат")
         return data
     except FileNotFoundError as error:
-        logger.info(f"Произошла ошибка: {error}")
+        logger.error(f"Произошла ошибка: {error}")
         return data
     except json.JSONDecodeError as error:
-        logger.info(f"Произошла ошибка: {error}")
+        logger.error(f"Произошла ошибка: {error}")
         return data
 
 
