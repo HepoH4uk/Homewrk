@@ -29,13 +29,13 @@ def amount_transactions(transaction):
            f"&from={currency_code}&amount={transaction_amount}")
     headers = {"apikey": f"{API_KEY}"}
     payload = {"amount": transaction_amount, "from": {currency_code}, "to": "RUB"}
-    response = requests.get(url, headers=headers, params=payload)
-    status_code = response.status_code
 
     if currency_code == "RUB":
         amount += float(transaction_amount)
         return round(amount, 2)
     else:
+        response = requests.get(url, headers=headers, params=payload)
+        status_code = response.status_code
         try:
             if status_code == 200:
                 data_json = response.json()
