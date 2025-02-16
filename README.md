@@ -48,6 +48,11 @@ my_function error: unsupported operand type(s) for /: 'int' and 'str'. Inputs: (
 https://apilayer.com/marketplace/exchangerates_data-api
 ```
 
+## Чтение 'csv' и 'excel' файлов
+Функция read_file_csv помогает прочитать csv-файл и возвращает список словарей
+Функция read_file_excel помогает прочитать excel-файл и возвращает список словарей
+При возникновении различных ошибок будет выводиться пустой список
+
 ## Тестирование функций
 
 Для всех функций добавлены проверочные тесты
@@ -59,4 +64,5 @@ test_generators.py
 test_decorators.py
 test_external_api.py
 test_utils.py
+test_read_cvs_excel.py
 ```
