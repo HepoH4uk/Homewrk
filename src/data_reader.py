@@ -14,6 +14,8 @@ def read_file_csv(file):
             return transactions
     except FileNotFoundError:
         return []
+    except Exception:
+        return []
 
 
 def read_file_excel(file):
