@@ -47,7 +47,7 @@ def test_card_number_generator(start, stop, expected):
     expected_result = ["0000 0000 0001 1110", "0000 0000 0001 1111", "0000 0000 0001 1112",
                        "0000 0000 0001 1113", "0000 0000 0001 1114", "0000 0000 0001 1115"]
 
-    general_result = list(card_number_generator(start, end))
+    general_result = list(card_number_generator(start, stop))
 
     if general_result != expected_result:
         print(
