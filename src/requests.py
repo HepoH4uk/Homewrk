@@ -37,11 +37,12 @@ transactions = [
 descriptions = ["Перевод организации"]
 search_string = "Перевод"
 
+
 def bank_search(transactions, search_string):
     result_data = []
     for transaction in transactions:
         result = re.search(pattern=search_string.lower(), string=transaction["description"].lower(), flags=re.I)
-        if result != None:
+        if result is not None:
             result_data.append(transaction)
     return result_data
 
@@ -49,7 +50,6 @@ def bank_search(transactions, search_string):
 def operations_count_by_category(transactions, descriptions):
     """Функция для подсчета количества банковских операций по категориям."""
     category_counter = Counter()
-    category_list = []
     for transaction in transactions:
         if "description" in transaction:
             description = transaction["description"]
