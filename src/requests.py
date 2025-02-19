@@ -39,6 +39,7 @@ search_string = "Перевод"
 
 
 def bank_search(transactions, search_string):
+    """Функция для сортировки списка транзакций по ключевым словам."""
     result_data = []
     for transaction in transactions:
         result = re.search(pattern=search_string.lower(), string=transaction["description"].lower(), flags=re.I)
